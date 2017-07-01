@@ -7,7 +7,14 @@ jwt:
       path: auth
       refresh: refresh
 
-#logging:
-#  level:
-#    org.springframework:
-#      security: DEBUG
+#mongodb
+data:
+  mongodb.host: localhost
+  mongodb.port: 27017
+  mongodb.uri: mongodb://localhost/account
+  mongo.repositories.enabled: true
+
+logging:
+  level:
+    org.springframework:
+      security: DEBUG

@@ -1,6 +1,7 @@
 package me.adrien.giftlist.account;
 
-import me.adrien.giftlist.account.endpoints.HelloWorldEndpoint;
+import me.adrien.giftlist.account.endpoints.EventEndpoint;
+import me.adrien.giftlist.account.endpoints.FamillyEndpoint;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +14,7 @@ public class JerseyConfig extends ResourceConfig {
         registerEndpoints();
     }
     private void registerEndpoints() {
-        register(HelloWorldEndpoint.class);
+        register(FamillyEndpoint.class);
+        register(EventEndpoint.class);
     }
 }
