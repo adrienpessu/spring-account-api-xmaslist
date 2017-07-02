@@ -2,7 +2,6 @@ package me.adrien.giftlist.account.models;
 
 import org.springframework.data.annotation.Id;
 
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +17,8 @@ public class Event {
 
     public String famillyId;
 
+    public String dnsName;
+
     public List<Child> childs;
 
     public Date start;
@@ -26,10 +27,11 @@ public class Event {
 
     public Event(){}
 
-    public Event(String id, String name, String famillyId, List<Child> childs, Date start, Date end) {
+    public Event(String id, String name, String famillyId, String dnsName, List<Child> childs, Date start, Date end) {
         this.id = id;
         this.name = name;
         this.famillyId = famillyId;
+        this.dnsName = dnsName;
         this.childs = childs;
         this.start = start;
         this.end = end;
@@ -41,6 +43,7 @@ public class Event {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", famillyId='" + famillyId + '\'' +
+                ", dnsName='" + dnsName + '\'' +
                 ", childs=" + childs +
                 ", start=" + start +
                 ", end=" + end +
