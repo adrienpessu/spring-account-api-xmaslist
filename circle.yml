@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+
+    working_directory: ~/spring-rest-account-giftlist
+
+    docker:
+      - image: circleci/openjdk:8-jdk-browsers
+
+    steps:
+
+      - checkout
+
+      - restore_cache:
+          key: spring-rest-account-giftlist-{{ checksum "pom.xml" }}
+
+      - run: gradle
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: spring-rest-account-giftlist-{{ checksum "pom.xml" }}
+
+      - run: gradle build
+
+      - store_artifacts:
+          path: build/libs/spring-rest-account-giftlist-0.0.1-SNAPSHOT.jar
